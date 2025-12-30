@@ -26,9 +26,6 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
   }
-  input[type="file"] {
-    margin: 20px 0;
-  }
   button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -50,38 +47,13 @@
   <h1>Tactile info Bamboulab</h1>
   <h2>Flasher votre ESP32</h2>
 
-  <!-- Input pour choisir le fichier .bin -->
-  <input type="file" id="local-bin" accept=".bin" />
-
   <!-- Bouton ESP Web Tools pour le flash -->
-  <esp-web-install-button id="btn"></esp-web-install-button>
+  <esp-web-install-button manifest="./manifest.json">
+    <button>Installer le firmware</button>
+  </esp-web-install-button>
 </div>
-
-<script type="module">
-  const btn = document.getElementById('btn');
-  const fileInput = document.getElementById('local-bin');
-
-  fileInput.addEventListener('change', () => {
-    const file = fileInput.files[0];
-    if (file) {
-      // Manifest dynamique pour le fichier choisi
-      btn.manifest = {
-        name: "Tactile info Bamboulab",
-        version: "1.0",
-        builds: [{
-          chipFamily: "ESP32",
-          parts: [{
-            path: file,       // Fichier choisi par l’utilisateur
-            offset: 65536
-          }]
-        }]
-      };
-      // Affiche automatiquement le bouton Installer
-      btn.innerHTML = '<button>Installer le firmware</button>';
-    }
-  });
-</script>
 
 </body>
 </html>
+
 
