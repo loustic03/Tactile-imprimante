@@ -4,17 +4,41 @@
 <meta charset="UTF-8">
 <title>Tactile info Bamboulab</title>
 
-<!-- Script officiel ESP Web Tools -->
+<!-- ESP Web Tools -->
 <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 
 </head>
 <body>
 <h2>Installer le firmware ESP32</h2>
 
-<!-- Bouton d’installation -->
-<esp-web-install-button manifest="./manifest.json">
-  <button>Installer</button>
-</esp-web-install-button>
+<!-- Input pour sélectionner un .bin local -->
+<input type="file" id="local-bin" accept=".bin" />
 
+<!-- Bouton d’installation ESP Web Flasher -->
+<esp-web-install-button id="btn"></esp-web-install-button>
+
+<script type="module">
+const btn = document.getElementById('btn');
+const fileInput = document.getElementById('local-bin');
+
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+  if (file) {
+    // Crée un manifest temporaire pointant sur le fichier choisi
+    btn.manifest = {
+      name: "Tactile info bamboulab",
+      version: "1.0",
+      builds: [{
+        chipFamily: "ESP32",
+        parts: [{
+          path: file,
+          offset: 65536
+        }]
+      }]
+    };
+  }
+});
+</script>
 </body>
 </html>
+
