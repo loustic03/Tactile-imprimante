@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <title>Tactile info Bamboulab - Flash ESP32</title>
 
-<!-- ESP Web Tools moderne via CDN -->
-<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<script type="module"
+  src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module">
+</script>
 
 <style>
   body {
@@ -39,20 +40,19 @@
     background-color: #0288d1;
   }
 </style>
-
 </head>
-<body>
 
+<body>
 <div class="flash-container">
   <h1>Tactile info Bamboulab</h1>
   <h2>Flasher votre ESP32</h2>
 
-  <!-- Bouton ESP Web Tools pour le flash -->
-  <esp-web-install-button manifest="./manifest.json">
+  <esp-web-install-button
+    manifest="./manifest.json"
+    erase-flash>
     <button>Installer le firmware</button>
   </esp-web-install-button>
 </div>
-
 </body>
 </html>
 
