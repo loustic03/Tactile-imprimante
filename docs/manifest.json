@@ -6,7 +6,7 @@
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "firmware.bin",
+          "path": "Display-bambouLab-V4-30122025.ino.bin",
           "offset": 65536
         }
       ]
