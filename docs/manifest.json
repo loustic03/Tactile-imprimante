@@ -1,15 +1,11 @@
-{
-  "name": "Tactile info bamboulab",
-  "version": "1.0",
-  "builds": [
-    {
-      "chipFamily": "ESP32",
-      "parts": [
-        {
-          "path": "Display-bambouLab-V4-30122025.ino.bin",
-          "offset": 65536
-        }
-      ]
-    }
-  ]
-}
+btn.manifest = {
+  name: "Tactile info bamboulab",
+  version: "1.0",
+  builds: [{
+    chipFamily: "ESP32",
+    parts: [{
+      path: file,      // fichier choisi par l’utilisateur
+      offset: 65536
+    }]
+  }]
+};
