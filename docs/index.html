@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Tactile info Bamboulab</title>
+
+<!-- Script officiel ESP Web Tools -->
 <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+
 </head>
 <body>
 <h2>Installer le firmware ESP32</h2>
-<button onclick="flashFirmware()">Installer</button>
-<script>
-function flashFirmware() {
-    EspWebFlasher.flash({
-        manifestUrl: 'manifest.json'
-    });
-}
-</script>
+
+<!-- Bouton d’installation -->
+<esp-web-install-button manifest="./manifest.json">
+  <button>Installer</button>
+</esp-web-install-button>
+
 </body>
 </html>
