@@ -6,7 +6,7 @@
       "chipFamily": "ESP32-S3",
       "parts": [
         {
-          "path": "version-V4.1.bin",
+          "path": "version-merge-V4.1.bin",
           "offset": 0
         }
       ]
