@@ -1,4 +1,7 @@
+Lien doc github:  
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#line-breaks  
 
+* Attention:  
 Ne pas oublier la , lors du rajout de version dans le updates.json   
 Exemple:  
 [  
